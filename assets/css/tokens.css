@@ -1,0 +1,85 @@
+/* ============================================================
+   tokens.css — نظام التصميم (Design Tokens)
+   كل الألوان والخطوط والمسافات تُعرَّف هنا فقط، وبقية الملفات تستخدم المتغيرات.
+   ثلاثة أوضاع: فاتح (افتراضي) / ليلي [data-theme="dark"] / تباين عالٍ [data-contrast="high"]
+   ثلاثة أحجام خط: [data-font="s|m|l"]
+   ============================================================ */
+:root {
+  /* ألوان الهوية (ثابتة في كل الأوضاع) */
+  --py-blue: #3776AB;      /* أزرق بايثون */
+  --py-yellow: #FFD43B;    /* أصفر بايثون: يُستخدم على الخلفيات الداكنة فقط (تباين) */
+  --ink: #0F2438;          /* الحبر الكحلي: الشريط العلوي والتذييل وقسم البطل */
+  --ink-2: #16314B;
+
+  /* ألوان دلالية — الوضع الفاتح */
+  --bg: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-2: #EEF2F7;
+  --text: #13202E;
+  --text-muted: #4E5D6E;   /* تباين 6.6:1 على الأبيض */
+  --line: #D9E1EA;
+  --primary: #2F6797;      /* أغمق قليلاً من أزرق بايثون ليحقق 5.9:1 على الأبيض */
+  --primary-text: #FFFFFF;
+  --ok: #1E7B4A;  --ok-bg: #E2F3E9;
+  --warn: #7A5300; --warn-bg: #FFF3CF;
+  --bad: #A3121B; --bad-bg: #FCE4E6;
+  --lock: #5E6875; --lock-bg: #E7EBF0;
+  --code-bg: #EEF2F7; --code-text: #10233A;
+  --focus: #FFB000;
+
+  /* الخطوط */
+  --font-display: "Cairo", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+  --font-code: "Fira Code", Consolas, Menlo, "DejaVu Sans Mono", "Tajawal", "Courier New", monospace; /* العربية داخل الكود تأخذ خطاً عربياً */
+  --fs-base: 17px;
+
+  /* المقياس والمسافات */
+  --radius-s: 6px; --radius-m: 10px; --radius-l: 18px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 40px; --space-7: 64px;
+  --maxw: 1120px;
+  --shadow: 0 1px 2px rgba(15, 36, 56, .06), 0 6px 18px rgba(15, 36, 56, .06);
+  --dur: .25s;
+}
+
+/* ---------- الوضع الليلي ---------- */
+[data-theme="dark"] {
+  --bg: #0B1622;
+  --surface: #122133;
+  --surface-2: #19304A;
+  --text: #E6EDF5;
+  --text-muted: #A9B8C8;
+  --line: #24405E;
+  --primary: #6FA8DC;
+  --primary-text: #0B1622;
+  --ok: #6FD39A;  --ok-bg: #133524;
+  --warn: #FFD43B; --warn-bg: #3A3110;
+  --bad: #FF8A93; --bad-bg: #3D1519;
+  --lock: #93A1B1; --lock-bg: #1A2A3C;
+  --code-bg: #0E1A28; --code-text: #DCE7F3;
+  --shadow: none;
+}
+
+/* ---------- وضع التباين العالي (يغلب الليلي والفاتح) ---------- */
+[data-contrast="high"] {
+  --bg: #000000;
+  --surface: #000000;
+  --surface-2: #111111;
+  --text: #FFFFFF;
+  --text-muted: #FFFFFF;
+  --line: #FFFFFF;
+  --primary: #FFD43B;
+  --primary-text: #000000;
+  --ok: #7CFFB0; --ok-bg: #000000;
+  --warn: #FFD43B; --warn-bg: #000000;
+  --bad: #FF9AA2; --bad-bg: #000000;
+  --lock: #FFFFFF; --lock-bg: #000000;
+  --code-bg: #000000; --code-text: #FFFFFF;
+  --ink: #000000; --ink-2: #000000;
+  --focus: #00E5FF;
+  --shadow: none;
+}
+
+/* ---------- أحجام الخط ---------- */
+[data-font="s"] { --fs-base: 15px; }
+[data-font="m"] { --fs-base: 17px; }
+[data-font="l"] { --fs-base: 20px; }
